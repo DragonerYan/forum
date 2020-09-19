@@ -51,7 +51,7 @@
         order by p.reply_time desc limit #{offset},#{limit}
     </select>
 
-    <select id="selectPostCount" resultType="int">
+    <select id="selectPostCount" resultType="Integer">
         select count(*) from post
     </select>
 
