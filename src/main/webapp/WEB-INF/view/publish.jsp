@@ -1,5 +1,7 @@
 ﻿<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" import="java.util.*" %>
-
+<%String path = request.getContextPath();
+	String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +9,14 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/wangEditor.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
-	<link rel="stylesheet" type="text/css" href="css/publis
-	h.css">
+	<link rel="stylesheet" type="text/css" href="css/publish.css">
 </head>
 <body>
 <%@ include file="header.jsp" %>
-
-
+<div  style = "height:50px;padding-top:20px">
+	<input type="button" value=" 查 询 " onclick="search()">
+</div>
+<iframe id="jkll" name="if_report_name" width="100%" height="98%"  frameborder="0" scrolling="no" src=""></iframe>
 	<!-- 中间主体板块 -->
 	<div class="main w clearfix">
 		<form action="publishPost.do" method="post">
@@ -48,6 +51,10 @@
 <script type="text/javascript" src="js/wangEditor.js"></script>
 <script type="text/javascript" src="js/base.js"></script>
 <script type="text/javascript">
+	function search(){
+		debugger
+		var url = "<%= basePath%>ReportServer?reportlet=EmployeeLeaveWork.cpt";
+		$('#jkll').attr('src',url);
     $(function(){
         var editor = new wangEditor('textarea');
 

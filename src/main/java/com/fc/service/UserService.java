@@ -67,7 +67,7 @@ public class UserService {
         info.setRequestUrl(requestURL.toString());
         info.setContextPath(contextPath);
         info.setRemoteAddr(remoteAddr);
-        userMapper.insertInfo(info);
+        //userMapper.insertInfo(info);
     }
 
     public List<User> listUserByTime() {

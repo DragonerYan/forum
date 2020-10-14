@@ -34,6 +34,7 @@
     <!--配置拦截器 -->
     <mvc:interceptors>
         <mvc:interceptor>
+            <mvc:mapping path="/ReportServer/**" />
             <mvc:mapping path="/*" />
             <bean class="com.fc.interceptor.LoginInterceptor">
                 <property name="excludedUrls">
